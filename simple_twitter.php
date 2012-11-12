@@ -137,7 +137,7 @@ function update_twitter_message() {
 	global $_opt_last_cache_time;
 	$twitterId = get_option($_opt_twitter_id);
 	if ($twitterId != '') {
-		$url = 'http://twitter.com/statuses/user_timeline/'.$twitterId.'.rss';
+		$url = 'http://api.twitter.com/1/statuses/user_timeline.rss?screen_name='.$twitterId;
 		$title = get_message_from_url($url);
 		if ($title != '') {
 			$msg = extract_message_from_twitter_title($title);
